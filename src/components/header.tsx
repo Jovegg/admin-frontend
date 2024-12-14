@@ -73,10 +73,10 @@ export default function Header() {
                             asChild
                             className={navigationMenuTriggerStyle() + " !text-foreground"}
                         >
-                            <Link to={profile ? "/dashboard" : "#"}>
+                            <a href={window.location.origin}>
                                 <img className="h-7 mr-1" src="/dashboard/logo.svg" />
                                 {t("nezha")}
-                            </Link>
+                            </a>
                         </NavigationMenuLink>
 
                         <div className="flex items-center gap-1">
@@ -264,18 +264,18 @@ export default function Header() {
                 )}
             </div>
             <Card className="mx-2 my-2 flex justify-center items-center hover:bg-accent transition duration-200">
-                <Link
+                <a
                     className="inline-flex w-full items-center px-4 py-2"
-                    to={profile ? "/dashboard" : "#"}
+                    href={window.location.origin}
                 >
                     <img className="h-7 mr-1" src="/dashboard/logo.svg" /> NEZHA
-                </Link>
+                </a>
             </Card>
             <div className="ml-auto flex items-center gap-1">
                 <ModeToggle />
                 {profile && (
                     <>
-                        <DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
+                    <DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
                             <DropdownMenuTrigger asChild>
                                 <Avatar className="ml-1 h-8 w-8 cursor-pointer border-foreground border-[1px]">
                                     <AvatarImage
